@@ -1,4 +1,4 @@
-package ib.facmed.unam.mx.massalud2.ui;
+package ib.facmed.unam.mx.gacetaFacMed.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import ib.facmed.unam.mx.massalud2.R;
+import ib.facmed.unam.mx.gacetaFacMed.R;
 
 /**
  * Created by samo92 on 05/12/2017.

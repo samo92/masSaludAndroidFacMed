@@ -1,11 +1,10 @@
-package ib.facmed.unam.mx.massalud2.ui;
+package ib.facmed.unam.mx.gacetaFacMed.ui;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
 
-import ib.facmed.unam.mx.massalud2.R;
+import ib.facmed.unam.mx.gacetaFacMed.R;
 
 /**
  * Created by samo92 on 06/12/2017.

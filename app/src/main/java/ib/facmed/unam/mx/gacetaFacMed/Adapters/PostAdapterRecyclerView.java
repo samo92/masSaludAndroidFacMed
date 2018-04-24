@@ -1,4 +1,4 @@
-package ib.facmed.unam.mx.massalud2.Adapters;
+package ib.facmed.unam.mx.gacetaFacMed.Adapters;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,9 +14,9 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-import ib.facmed.unam.mx.massalud2.R;
-import ib.facmed.unam.mx.massalud2.models.PostRendered;
-import ib.facmed.unam.mx.massalud2.ui.WebViewActivity;
+import ib.facmed.unam.mx.gacetaFacMed.R;
+import ib.facmed.unam.mx.gacetaFacMed.models.PostRendered;
+import ib.facmed.unam.mx.gacetaFacMed.ui.WebViewActivity;
 
 /**
  * Created by samo92 on 29/11/2017.

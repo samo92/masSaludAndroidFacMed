@@ -1,4 +1,4 @@
-package ib.facmed.unam.mx.massalud2;
+package ib.facmed.unam.mx.gacetaFacMed;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,4 +1,4 @@
-package ib.facmed.unam.mx.massalud2.Adapters;
+package ib.facmed.unam.mx.gacetaFacMed.Adapters;
 
 
 
@@ -11,17 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
-import java.util.Map;
 
-import ib.facmed.unam.mx.massalud2.R;
-import ib.facmed.unam.mx.massalud2.models.PostRendered;
-import ib.facmed.unam.mx.massalud2.ui.WebViewActivity;
+import ib.facmed.unam.mx.gacetaFacMed.R;
+import ib.facmed.unam.mx.gacetaFacMed.models.PostRendered;
+import ib.facmed.unam.mx.gacetaFacMed.ui.WebViewActivity;
 
 /**
  * Created by samo92 on 06/12/2017.

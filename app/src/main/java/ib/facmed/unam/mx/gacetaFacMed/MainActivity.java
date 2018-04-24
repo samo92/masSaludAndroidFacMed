@@ -1,4 +1,4 @@
-package ib.facmed.unam.mx.massalud2;
+package ib.facmed.unam.mx.gacetaFacMed;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -9,13 +9,12 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 
-import ib.facmed.unam.mx.massalud2.ui.AboutUsFragment;
-import ib.facmed.unam.mx.massalud2.ui.DashboardFragment;
-import ib.facmed.unam.mx.massalud2.ui.FailFragment;
-import ib.facmed.unam.mx.massalud2.ui.HomeFragment;
+import ib.facmed.unam.mx.gacetaFacMed.ui.AboutUsFragment;
+import ib.facmed.unam.mx.gacetaFacMed.ui.DashboardFragment;
+import ib.facmed.unam.mx.gacetaFacMed.ui.FailFragment;
+import ib.facmed.unam.mx.gacetaFacMed.ui.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 

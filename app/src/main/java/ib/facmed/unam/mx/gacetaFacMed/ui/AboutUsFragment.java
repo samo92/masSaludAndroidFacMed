@@ -1,4 +1,4 @@
-package ib.facmed.unam.mx.massalud2.ui;
+package ib.facmed.unam.mx.gacetaFacMed.ui;
 
 
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 
-import ib.facmed.unam.mx.massalud2.R;
+import ib.facmed.unam.mx.gacetaFacMed.R;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -1,10 +1,10 @@
-package ib.facmed.unam.mx.massalud2.ui;
+package ib.facmed.unam.mx.gacetaFacMed.ui;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,57 +17,63 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-import ib.facmed.unam.mx.massalud2.Adapters.CategoryAdapterStaggered;
-import ib.facmed.unam.mx.massalud2.Adapters.PostAdapterRecyclerView;
-import ib.facmed.unam.mx.massalud2.CategoryPostApi;
-import ib.facmed.unam.mx.massalud2.R;
-import ib.facmed.unam.mx.massalud2.api.ApiService;
-import ib.facmed.unam.mx.massalud2.api.PostApiService;
-import ib.facmed.unam.mx.massalud2.models.CategoryDetails;
-import ib.facmed.unam.mx.massalud2.models.Post;
-import ib.facmed.unam.mx.massalud2.models.PostRendered;
+import ib.facmed.unam.mx.gacetaFacMed.Adapters.PostAdapterRecyclerView;
+import ib.facmed.unam.mx.gacetaFacMed.Adapters.SlidingImageAdapter;
+import ib.facmed.unam.mx.gacetaFacMed.R;
+import ib.facmed.unam.mx.gacetaFacMed.api.ApiService;
+import ib.facmed.unam.mx.gacetaFacMed.api.PostApiService;
+import ib.facmed.unam.mx.gacetaFacMed.models.Post;
+import ib.facmed.unam.mx.gacetaFacMed.models.PostRendered;
+import me.relex.circleindicator.CircleIndicator;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Created by samo92 on 06/12/2017.
+ * Created by samo92 on 04/12/2017.
  */
 
-public class PostFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
-    private PostAdapterRecyclerView postAdapter;
+    ViewPager mViewPager;
+    CircleIndicator indicator;
 
-    private String postId;
+    SlidingImageAdapter slidingImageAdapter;
+
+    PostAdapterRecyclerView postAdapter;
 
     //Variable para retrofit
     private PostApiService postApiService;
 
-    public void PostFragment(){
-        //Empty
+    public HomeFragment() {
+        //Se requiere un constructor vacio
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_recyclerview,container,false);
-        postId=getArguments().getString("id");
-
+        //Inflamos el fragment
+        View view = inflater.inflate(R.layout.fragment_home,container,false);
         initViews(view);
-
 
 
         return view;
     }
 
-    private void initViews(View view){
+    private void initViews(View view) {
 
-        CategoryPostApi categoryPostApi = new CategoryPostApi();
-        //categoryPost=categoryPostApi.loadJSON(id);
+        indicator = (CircleIndicator) view.findViewById(R.id.viewpager_indicator);
+
+        //Instanciamos nuestro ViewPager
+        slidingImageAdapter = new SlidingImageAdapter(getContext(),new ArrayList<PostRendered>(0));
+
+        mViewPager = (ViewPager) view.findViewById(R.id.postViewPager);
+        mViewPager.setAdapter(slidingImageAdapter);
 
         //Instanciamos nuestro RecyclerView
-        RecyclerView postRecycler = (RecyclerView) view.findViewById(R.id.recyclerview_category);
+        RecyclerView postRecycler = (RecyclerView) view.findViewById(R.id.postRecycler);
 
         //Creamos un MANAGER para nuestro recyclerview
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
@@ -81,15 +87,13 @@ public class PostFragment extends Fragment {
                 new PostAdapterRecyclerView(new ArrayList<PostRendered>(0), R.layout.cardview_main, getActivity());
         postRecycler.setAdapter(postAdapter);
 
-        //Log.
-
-        loadJSON(postId);
+        loadJSON();
 
     }
 
-    public void loadJSON(String idPost){
+    private void loadJSON(){
         postApiService = ApiService.createApiService();
-        Call<Post> responsePost = postApiService.getPostById(idPost);
+        Call<Post> responsePost = postApiService.getPostById("4");
 
         responsePost.enqueue(new Callback<Post>() {
             @Override
@@ -114,10 +118,18 @@ public class PostFragment extends Fragment {
         libre = libre.replace('″', '"');
         Gson gson = new Gson();
         Type tipoListaPost = new TypeToken<ArrayList<PostRendered>>(){}.getType();
-        ArrayList<PostRendered> array= gson.fromJson(libre, tipoListaPost);
+        ArrayList<PostRendered> postsRendered = gson.fromJson(libre, tipoListaPost);
 
-        postAdapter.updateAdapter(array);
+        Log.e("RESPUESTA: ", libre);
 
-        Log.e("RESPUESTA: ", postId);
+        ArrayList<PostRendered> viewPagerImages = new ArrayList<PostRendered>();
+        for(int i=0; i<4; i++){
+            viewPagerImages.add(i,postsRendered.get(i));
+            postsRendered.remove(i);
+        }
+
+        slidingImageAdapter.updateAdapter(viewPagerImages);
+        postAdapter.updateAdapter(postsRendered);
+        //indicator.setViewPager(mViewPager);
     }
 }

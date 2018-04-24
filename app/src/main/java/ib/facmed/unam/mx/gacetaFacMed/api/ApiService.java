@@ -1,6 +1,5 @@
-package ib.facmed.unam.mx.massalud2.api;
+package ib.facmed.unam.mx.gacetaFacMed.api;
 
-import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 

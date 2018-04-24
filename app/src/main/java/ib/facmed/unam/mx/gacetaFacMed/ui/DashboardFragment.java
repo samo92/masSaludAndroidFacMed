@@ -1,31 +1,18 @@
-package ib.facmed.unam.mx.massalud2.ui;
+package ib.facmed.unam.mx.gacetaFacMed.ui;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-import ib.facmed.unam.mx.massalud2.Adapters.CategoryAdapterStaggered;
-import ib.facmed.unam.mx.massalud2.Adapters.PostAdapterRecyclerView;
-import ib.facmed.unam.mx.massalud2.R;
-import ib.facmed.unam.mx.massalud2.api.ApiService;
-import ib.facmed.unam.mx.massalud2.models.CategoryDetails;
-import ib.facmed.unam.mx.massalud2.models.Post;
-import ib.facmed.unam.mx.massalud2.models.PostRendered;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import ib.facmed.unam.mx.gacetaFacMed.Adapters.CategoryAdapterStaggered;
+import ib.facmed.unam.mx.gacetaFacMed.R;
+import ib.facmed.unam.mx.gacetaFacMed.models.CategoryDetails;
 
 /**
  * Created by samo92 on 04/12/2017.

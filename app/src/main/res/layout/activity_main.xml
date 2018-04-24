@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ib.facmed.unam.mx.massalud2.MainActivity">
+    tools:context="ib.facmed.unam.mx.gacetaFacMed.MainActivity">
 
     <include
         layout="@layout/layout_custom_actionbar"

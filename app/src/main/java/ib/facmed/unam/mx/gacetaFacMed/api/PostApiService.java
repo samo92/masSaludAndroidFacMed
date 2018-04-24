@@ -1,6 +1,6 @@
-package ib.facmed.unam.mx.massalud2.api;
+package ib.facmed.unam.mx.gacetaFacMed.api;
 
-import ib.facmed.unam.mx.massalud2.models.Post;
+import ib.facmed.unam.mx.gacetaFacMed.models.Post;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;

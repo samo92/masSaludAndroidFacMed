@@ -1,4 +1,4 @@
-package ib.facmed.unam.mx.massalud2.models;
+package ib.facmed.unam.mx.gacetaFacMed.models;
 
 /**
  * Created by samo92 on 22/11/2017.

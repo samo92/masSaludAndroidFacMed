@@ -1,4 +1,4 @@
-package ib.facmed.unam.mx.massalud2;
+package ib.facmed.unam.mx.gacetaFacMed;
 
 
 import android.text.Html;
@@ -10,10 +10,10 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-import ib.facmed.unam.mx.massalud2.api.ApiService;
-import ib.facmed.unam.mx.massalud2.api.PostApiService;
-import ib.facmed.unam.mx.massalud2.models.Post;
-import ib.facmed.unam.mx.massalud2.models.PostRendered;
+import ib.facmed.unam.mx.gacetaFacMed.api.ApiService;
+import ib.facmed.unam.mx.gacetaFacMed.api.PostApiService;
+import ib.facmed.unam.mx.gacetaFacMed.models.Post;
+import ib.facmed.unam.mx.gacetaFacMed.models.PostRendered;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
